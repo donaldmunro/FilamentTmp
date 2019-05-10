@@ -57,8 +57,8 @@ bool render_scene()
    backgroundView->setClearTargets(true, true, false);
    view->setClearTargets(false, true, false);
    view->setRenderTarget(filament::View::TargetBufferFlags::DEPTH_AND_STENCIL);
-   view->setClearColor(filament::Color::toLinear({1, 0, 0, 1}));
-   backgroundView->setClearColor(filament::Color::toLinear({0, 1, 0, 1}));
+   view->setClearColor(filament::Color::toLinear({0.8, 0.5, 0.2, 1}));
+   backgroundView->setClearColor(filament::Color::toLinear({0.2, 0.5, 0.8, 1}));
    // view->setPostProcessingEnabled(true);
    // backgroundView->setPostProcessingEnabled(false);
    // backgroundView->setDepthPrepass(filament::View::DepthPrepass::DISABLED);

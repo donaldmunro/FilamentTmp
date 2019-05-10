@@ -3,7 +3,11 @@ project(FilamentBackground)
 
 set(FILAMENT_DIR "/opt/filament")
 set(FILAMENT_INCLUDE ${FILAMENT_DIR}/out/debug/filament/include/)
-set(FILAMENT_LIBDIR "${FILAMENT_DIR}/out/debug/filament/lib/x86_64/")
+if (CMAKE_BUILD_TYPE STREQUAL "Release")
+   set(FILAMENT_LIBDIR "${FILAMENT_DIR}/out/release/filament/lib/x86_64/")
+else()
+   set(FILAMENT_LIBDIR "${FILAMENT_DIR}/out/debug/filament/lib/x86_64/")
+endif()
 set(FILAMENT_LIBS filament filaflat filamat filabridge backend utils smol-v bluevk bluegl geometry)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
